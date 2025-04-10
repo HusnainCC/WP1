@@ -1,0 +1,45 @@
+<header class="app-header">
+  <div class="logo">Employee Portal</div>
+  <div class="header-text">Welcome to the Dashboard</div>
+</header>
+
+
+<!-- dashboard.component.html -->
+<div *ngIf="isLoading" class="loading">
+  <p>Loading employees...</p>
+</div>
+
+<div *ngIf="!isLoading && errorMessage" class="error">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<div *ngIf="!isLoading && employees.length > 0">
+  <h2>Employee List</h2>
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ getDepartmentName(employee.deptId) }}</td>  <!-- Using the method to get department name -->
+        <td>
+          <button (click)="editEmployee(employee.id)">Edit</button>
+          <button (click)="deleteEmployee(employee.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button (click)="createEmployee()">Add New Employee</button>
+
+<footer class="app-footer">
+  <p>&copy; 2025 Employee Portal. All rights reserved.</p>
+</footer>

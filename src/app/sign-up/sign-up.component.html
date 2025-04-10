@@ -1,0 +1,91 @@
+<header class="app-header">
+    <div class="logo">Employee Portal</div>
+    <div class="header-text">Welcome to the SignUp</div>
+  </header>
+
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+      
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="signupData.username"
+          #username="ngModel"
+          required
+          class="form-control"
+        />
+        <div *ngIf="username.invalid && username.touched" class="error">
+          Username is required.
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+     <!-- Email Field -->
+<div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="signupData.email"
+      #email="ngModel"
+      required
+      email
+      class="form-control"
+    />
+    <div *ngIf="email.invalid && email.touched" class="error">
+      A valid email is required.
+    </div>
+  </div>
+  
+  
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="signupData.password"
+          #password="ngModel"
+          required
+          minlength="6"
+          class="form-control"
+        />
+        <div *ngIf="password.invalid && password.touched" class="error">
+          Password is required (min 6 characters).
+        </div>
+      </div>
+  
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          [(ngModel)]="signupData.confirmPassword"
+          #confirmPassword="ngModel"
+          required
+          [pattern]="signupData.password"
+          class="form-control"
+        />
+        <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="error">
+          Passwords must match.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="signupForm.invalid" class="btn">
+        Sign Up
+      </button>
+    </form>
+  </div>
+  <footer class="app-footer">
+    <p>&copy; 2025 Employee Portal. All rights reserved.</p>
+  </footer>

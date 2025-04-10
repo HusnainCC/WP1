@@ -1,0 +1,104 @@
+/* dashboard.component.css */
+
+.loading, .error {
+    text-align: center;
+    margin: 20px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .employee-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .employee-table th, .employee-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .employee-table th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .employee-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .employee-table button {
+    padding: 6px 12px;
+    margin: 0 4px 4px ;
+    border: none;
+    background-color: #1d75d3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .employee-table button:hover {
+    background-color: #0056b3;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  .app-header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .header-text {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .app-footer {
+    background-color: #e5e7eb;
+    color: #374151;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #d1d5db;
+    margin-top: 40px;
+  }

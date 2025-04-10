@@ -1,0 +1,32 @@
+<header class="app-header">
+  <div class="logo">Employee Portal</div>
+  <div class="header-text">Add Employee</div>
+</header>
+
+<div class="employee-form">
+    <h2>Add Employee</h2>
+    <form #employeeForm="ngForm" (ngSubmit)="addEmployee()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" [(ngModel)]="employee.name" name="name" required class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="employee.password" name="password" required class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" [(ngModel)]="employee.deptId" name="deptId" required class="form-control">
+          <option *ngFor="let dept of departments" [value]="dept.id">{{ dept.name }}</option>
+        </select>
+      </div>
+  
+      <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Add Employee</button>
+    </form>
+  </div>
+  
+  <footer class="app-footer">
+    <p>&copy; 2025 Employee Portal. All rights reserved.</p>
+  </footer>
